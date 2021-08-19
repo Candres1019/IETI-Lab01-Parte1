@@ -1,5 +1,7 @@
 package edu.eci.co.integrationproject.data;
 
+import java.util.Date;
+
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 
@@ -15,6 +17,6 @@ public class User {
 
 	private final String email;
 
-	private final Boolean created;
+	private final Date createdAt;
 
 }
