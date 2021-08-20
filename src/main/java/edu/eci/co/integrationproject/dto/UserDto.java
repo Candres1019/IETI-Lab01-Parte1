@@ -1,5 +1,7 @@
 package edu.eci.co.integrationproject.dto;
 
+import java.util.Date;
+
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 
@@ -13,6 +15,6 @@ public class UserDto {
 
 	private final String email;
 
-	private final Boolean created;
+	private final Date createdAt;
 
 }
