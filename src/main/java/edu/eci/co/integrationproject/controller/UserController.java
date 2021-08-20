@@ -28,8 +28,6 @@ public class UserController {
 
 	private final UserService userService;
 
-	private final ModelMapper modelmapper;
-
 	@GetMapping
 	public ResponseEntity<List<User>> all() {
 
@@ -57,7 +55,7 @@ public class UserController {
 
 		try {
 			return ResponseEntity.status(HttpStatus.CREATED)
-								 .body(userService.create(modelmapper.map(userDto, User.class)));
+								 .body(userService.create(new ModelMapper().map(userDto, User.class)));
 		} catch (Exception e) {
 			log.error(e.getMessage());
 			return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
@@ -69,7 +67,7 @@ public class UserController {
 
 		try {
 			return ResponseEntity.status(HttpStatus.OK)
-								 .body(userService.update(modelmapper.map(userDto, User.class), id));
+								 .body(userService.update(new ModelMapper().map(userDto, User.class), id));
 		} catch (Exception e) {
 			log.error(e.getMessage());
 			return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
