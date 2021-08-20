@@ -2,21 +2,25 @@ package edu.eci.co.integrationproject.data;
 
 import java.util.Date;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.RequiredArgsConstructor;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Getter
-@RequiredArgsConstructor
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class User {
 
-	private final String id;
+	private String id;
 
-	private final String name;
+	private String name;
 
-	private final String lastName;
+	private String lastName;
 
-	private final String email;
+	private String email;
 
-	private final Date createdAt;
+	private Date createdAt;
 
 }
